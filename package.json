@@ -1,0 +1,23 @@
+{
+  "name": "objectarx-2024-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local searchable ObjectARX SDK documentation and development diagnostics MCP server",
+  "engines": { "node": ">=20.11.0" },
+  "scripts": {
+    "doctor": "node src/doctor.js",
+    "extract": "node src/indexer/extract-chm.js",
+    "index": "node src/indexer/build-index.js",
+    "rebuild": "npm run extract && npm run index",
+    "mcp": "node src/server.js",
+    "test": "node --test",
+    "test:search": "node scripts/test-search.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "better-sqlite3": "^12.4.1",
+    "cheerio": "^1.1.2",
+    "zod": "^3.25.76"
+  }
+}

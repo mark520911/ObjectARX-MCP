@@ -1,0 +1,9 @@
+﻿{
+  "mcpServers": {
+    "objectarx-docs": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["C:/YOUR/PATH/ObjectARX-MCP/src/server.js"]
+    }
+  }
+}

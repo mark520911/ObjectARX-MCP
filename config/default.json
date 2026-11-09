@@ -1,0 +1,12 @@
+﻿{
+  "sdkRoot": "",
+  "docsDir": "",
+  "includeDir": "",
+  "sevenZipPath": "",
+  "databasePath": "./data/objectarx.db",
+  "sourceDir": "./source",
+  "convertedDir": "./converted",
+  "maxExcerptChars": 700,
+  "maxResultChars": 6500,
+  "defaultTopK": 5
+}

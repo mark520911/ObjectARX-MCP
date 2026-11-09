@@ -1,0 +1,45 @@
+node_modules/
+
+# Local secrets and environment settings
+.env
+.env.*
+!.env.example
+
+# Local MCP configuration
+.mcp.json
+.mcp.*.json
+!.mcp.json.example
+
+# Local databases and generated data
+data/
+source/
+converted/
+logs/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local backups
+backup/
+
+# Local source archive
+/ObjectARX-MCP-1.0-source.zip
+
+# Staging directory for git-ified rules (copy out manually)
+/rules-git/
+
+# Local test certificates
+*.cer
+*.pfx
+
+# Local Claude settings
+.claude/settings.local.json
+
+# Root-level one-off scripts and backup variants (keep only register-claude.v3-test.ps1)
+/*.mjs
+/register-claude.candidate.v3.ps1
+/register-claude.v3-test.ps1.bak-*
+/register-claude.v3-test.ps1.pre-latest-only-*
+test/*.bak
