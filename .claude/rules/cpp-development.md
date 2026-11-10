@@ -66,13 +66,14 @@ Verify the relevant SDK documentation when ownership or lifetime semantics are u
 
 Do not modify source files automatically.
 
-Before changing C++ source code:
+Follow the **work-unit git workflow** in `project-safety.md` §2 (one feature or one bug fix per unit): do not create a git checkpoint for every individual edit.
+
+Before changing C++ source code (at work-unit start / before applying a batch):
 
 1. Inspect the relevant source and related declarations.
 2. Verify unfamiliar APIs against ObjectARX 2024.
-3. Back up the original file.
-4. Record its SHA256.
-5. Show the proposed Diff.
-6. Wait for explicit user approval.
+3. Ensure git context is valid and establish the **single baseline checkpoint ref** for the work unit if not already created (see `project-safety.md` §2). Do not repeat per edit within the same work unit.
+4. Show the proposed Diff for the work-unit batch (e.g. `git diff -- <paths>` / `git diff <baseline-ref> -- <paths>`).
+5. Wait for explicit user approval for the stated scope.
 
-After approval, make only the approved changes and verify the resulting file.
+After approved changes, verify the result (`git diff --stat` / file inspection). At work-unit completion, report the baseline ref/SHA (if any) and verification; create **one** commit only with explicit user authorization (see `project-safety.md` §2, §8).

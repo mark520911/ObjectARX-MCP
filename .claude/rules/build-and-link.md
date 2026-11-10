@@ -122,12 +122,13 @@ Never automatically modify:
 - Additional Dependencies
 - Runtime Library settings
 
-Before an approved modification:
+Follow the **work-unit git workflow** in `project-safety.md` §2 (one feature or one bug fix per unit): do not create a git checkpoint for every individual edit.
+
+Before an approved modification (at work-unit start / before applying a batch):
 
 1. Inspect the original configuration.
-2. Back up the affected file.
-3. Record the original SHA256.
-4. Present the exact proposed Diff.
-5. Wait for explicit user approval.
+2. Ensure git context is valid and establish the **single baseline checkpoint ref** for the work unit if not already created (see `project-safety.md` §2). Do not repeat per edit within the same work unit.
+3. Present the exact proposed Diff for the work-unit batch (e.g. `git diff -- <paths>` / `git diff <baseline-ref> -- <paths>`).
+4. Wait for explicit user approval for the stated scope.
 
-After approval, apply only the approved changes and verify the resulting file and SHA256.
+After approval, apply only the approved changes and verify the resulting file (`git diff --stat` / inspection). At work-unit completion, report the baseline ref/SHA (if any) and verification; create **one** commit only with explicit user authorization (see `project-safety.md` §2, §8).
